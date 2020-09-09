@@ -1,0 +1,58 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #careForm="ngForm">
+      <div class="form-group">
+        <label for="parent">Parent</label>
+        <select class="form-control" [(ngModel)]="care.parent"
+          id="parent"
+          name="parent"
+          placeholder="Choose one"
+          required #parent="ngModel">
+          <option [ngValue]="person1"  *ngFor="let person1 of persons">{{person1.name}}
+        </select>
+          <div [hidden]="!parent.pristine&& (parent.dirty||parent.touched)" class="alert alert-danger">Parent is required</div>
+      </div>
+      <div class="form-group">
+        <label for="sitter">Babysitter</label>
+        <select class="form-control" [(ngModel)]="care.babysitter"
+          id="sitter"
+          name="sitter"
+          placeholder="Choose one"
+          required #sitter="ngModel">
+          <option [ngValue]="person2"  *ngFor="let person2 of persons">{{person2.name}}
+        </select>
+          <div [hidden]="!sitter.pristine&& (sitter.dirty||sitter.touched)" class="alert alert-danger">Parent is required</div>
+      </div>
+      <div class="form-group">
+        <label for="datetime">Date & Time</label>
+        <input type="datetime-local" [(ngModel)]="care.dateTime"
+          class="form-control"
+          id="datetime"
+          name="datetime"
+          required #datetime="ngModel"/>
+        <div [hidden]="!datetime.pristine && (datetime.dirty||datetime.touched)" class="alert alert-danger">Date & time are required</div>
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration</label>
+        <input type="text" [(ngModel)]="care.duration"
+          class="form-control"
+          id="duration"
+          name="duration"
+          placeholder="Enter care duration"
+          required #duration="ngModel"/>
+          <div [hidden]="!duration.pristine&& (duration.dirty||duration.touched)" class="alert alert-danger">A duration is required</div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="care.description"
+          class="form-control"
+          id="description"
+          name="description"
+          placeholder="Enter a description"
+          required #description="ngModel"/>
+      </div>
+      <button type="submit" [disabled]="!careForm.form.valid"
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr *ngFor="let care of cares">
+          <td>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th style="width: 25%;">
+                    Parent
+                  </th>
+                  <td style="width: 25%;">
+                    {{care.parent.name}}
+                  </td>
+                  <th style="width: 25%;">
+                    Date
+                  </th>
+                  <td class="text-right">
+                    {{(care.dateTime | date:'medium')||'- &nbsp;'}}
+                  </td>
+                </tr>
+                <tr>
+                  <th >
+                    Babysitter
+                  </th>
+                  <td>
+                    {{care.babysitter.name}}
+                  </td>
+                  <th >
+                    Duration
+                  </th>
+                  <td class="text-right">
+                    {{care.duration}}
+                  </td>
+                </tr>
+                <tr>
+                  <th >
+                    Description
+                  </th>
+                  <td  colspan="3">
+                    {{care.description}}
+                  </td>
+                 </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

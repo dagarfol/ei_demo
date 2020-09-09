@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item">
+              <a routerLink="/persons" class="btn btn-info">List Persons</a>
+                </li>
+            <li class="list-inline-item">
+              <a routerLink="/cares" class="btn btn-info">List Cares</a>
+                </li>
+            <li class="list-inline-item">
+              <a routerLink="/caredebts" class="btn btn-info">List Care Debts</a>
+                </li>
+            <li class="list-inline-item">
+              <a routerLink="/addperson" class="btn btn-info">Add Person</a>
+                </li>
+            <li class="list-inline-item">
+              <a routerLink="/addcare" class="btn btn-info">Add Care</a>
+                </li>
+          </ul>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
